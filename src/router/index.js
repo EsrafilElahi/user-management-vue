@@ -7,12 +7,12 @@ const routes = [
     component: import("../views/UsersRoute.vue"),
   },
   {
-    path: "/add",
+    path: "/users/add",
     name: "AddUser",
     component: import("../views/AddUser.vue"),
   },
   {
-    path: "/:userId/details",
+    path: "/users/:userId/details",
     name: "UserDetails",
     component: import("../views/UserDetails.vue"),
   },
