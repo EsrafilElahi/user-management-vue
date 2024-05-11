@@ -3,8 +3,8 @@ import { createMemoryHistory, createRouter } from "vue-router";
 const routes = [
   {
     path: "/",
-    name: "Users",
-    component: import("../views/Users.vue"),
+    name: "UsersRoute",
+    component: import("../views/UsersRoute.vue"),
   },
   {
     path: "/add",

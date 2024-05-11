@@ -1,5 +1,6 @@
-<template>
+<template setup``>
   hi
+  User {{ $route }}
 </template>
 
 <script>
