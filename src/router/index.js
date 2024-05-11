@@ -1,19 +1,24 @@
 import { createMemoryHistory, createRouter } from "vue-router";
 
-export const routes = [
+const routes = [
   {
     path: "/",
     name: "Users",
-    component: <span>home view</span>,
+    component: import("../views/Users.vue"),
   },
   {
     path: "/add",
     name: "AddUser",
-    component: <span>add user view</span>,
+    component: import("../views/AddUser.vue"),
   },
   {
     path: "/:userId/details",
     name: "UserDetails",
-    component: <span>user details view</span>,
+    component: import("../views/UserDetails.vue"),
   },
 ];
+
+export const router = createRouter({
+  history: createMemoryHistory(),
+  routes,
+});
