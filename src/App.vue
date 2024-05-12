@@ -1,5 +1,7 @@
 <template>
   <FilterNav />
+
+  <RouterView />
 </template>
 
 <script setup>
