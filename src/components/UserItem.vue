@@ -13,7 +13,10 @@
       <span class="font-bold">city : </span>{{ item.city }}
     </h3>
 
-    <button class="btn mt-5" @click="handleClickDelete">delete</button>
+    <div class="flex-between">
+      <button class="btn mt-5" @click="handleClickDelete">delete</button>
+      <button class="btn mt-5" @click="handleClickDelete">edit</button>
+    </div>
   </div>
 </template>
 
