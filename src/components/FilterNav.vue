@@ -11,8 +11,9 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute()
 
-watch(route, (to, from) => {
-  console.log('Route changed:', to.path, '--->', from.path);
+watch(route, () => {
+  return 0;
+  // console.log('Route changed:', to.path, '--->', from.path);
 });
 
 
