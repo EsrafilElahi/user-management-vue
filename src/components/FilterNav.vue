@@ -5,10 +5,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "FilterNav"
-}
+<script setup>
+
 </script>
 
 <style scoped></style>
