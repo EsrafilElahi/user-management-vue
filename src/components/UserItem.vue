@@ -23,13 +23,12 @@ import { defineProps, defineEmits } from 'vue';
 const props = defineProps({
   item: Object
 })
+// eslint-disable-next-line vue/no-setup-props-destructure
+const { item } = props;
 
 const handleClickDelete = () => {
   emit('delete', item.id)
-  emit('refetch')
 }
 
-const emit = defineEmits(['delete', 'refetch'])
-// eslint-disable-next-line vue/no-setup-props-destructure
-const { item } = props;
+const emit = defineEmits(['delete'])
 </script>
