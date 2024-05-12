@@ -56,7 +56,7 @@ const handleSubmit = async () => {
   try {
     const res = await axios.post(BACKED_BASE_URI.value, userData)
     if (res.status === 201) {
-      router.back()
+      router.push("/")
     }
   } catch (error) {
     console.log('err :', error)
