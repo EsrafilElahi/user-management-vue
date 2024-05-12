@@ -1,20 +1,38 @@
 <template>
-  <div>
-    <UserItem :item="obj" />
+  <div class="flex flex-col gap-4">
+    <div v-for="user in users" :key="user.id">
+      <UserItem :item="user" />
+    </div>
 
   </div>
 </template>
 
 <script setup>
-import { reactive } from 'vue';
-
+import { onMounted, ref, watchEffect } from 'vue';
+import axios from 'axios';
 import UserItem from '../components/UserItem.vue';
+const BACKED_BASE_URI = ref('http://localhost:5000/users')
 
-const obj = reactive({
-  userName: 'esrafil',
-  job: 'frontend dev',
-  city: 'tehran',
-  role: 'superAdmin'
+const users = ref([]);
+
+const handleGetUers = async () => {
+  try {
+    const res = await axios.get(BACKED_BASE_URI.value)
+    if (res.status === 200) {
+      users.value = res.data
+    }
+  } catch (error) {
+    console.log('err :', error)
+  }
+}
+
+onMounted(() => {
+  console.log('mounted')
+  return handleGetUers()
+})
+
+watchEffect(() => {
+  console.log('watchEffect')
 })
 
 </script>
