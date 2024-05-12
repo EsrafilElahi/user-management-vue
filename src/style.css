@@ -9,9 +9,10 @@
   .flex-between {
     @apply flex justify-between items-center;
   }
-
   .btn {
-    @apply  bg-[#d0c] p-2 rounded-lg;
+    @apply bg-[#d0c] p-2 rounded-lg;
   }
-
+  .user-box {
+    @apply p-3 rounded-md border border-purple-500 max-w-[30%] mx-auto;
+  }
 }
