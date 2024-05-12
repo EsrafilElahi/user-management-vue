@@ -1,14 +1,11 @@
-<template setup``>
-  hi
-  <span class="bg-red-500">sdasdasd</span>
-  User {{ $route }}
+<template>
+  <FilterNav />
 </template>
 
-<script>
+<script setup>
+import FilterNav from './components/FilterNav.vue';
 
-export default {
-  name: 'App'
-}
+
 </script>
 
 <style>
