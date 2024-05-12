@@ -27,7 +27,8 @@ const handleGetUers = async () => {
 }
 
 const handleDelete = async (id) => {
-  return await axios.delete(`${BACKED_BASE_URI.value}/${id}`)
+  await axios.delete(`${BACKED_BASE_URI.value}/${id}`)
+  await handleGetUers()
 }
 
 onMounted(() => {
