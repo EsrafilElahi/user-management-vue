@@ -2,7 +2,7 @@
   <div class="w-[80%] mx-auto">
     <span @click="router.back()" class="w-full text-left mb-6 cursor-pointer">back</span>
 
-    <form class="mx-auto space-y-4 mt-5">
+    <form class="mx-auto space-y-4 mt-5" @submit.prevent="handleSubmit">
       <div class="flex items-center">
         <label for="userName" class="w-1/4 text-sm font-medium">userName:</label>
         <input type="text" id="userName" name="userName" v-model="userData.userName" required
@@ -57,7 +57,16 @@ const handleGetUser = async () => {
   }
 }
 
-console.log('userData :', userData)
+const handleSubmit = async () => {
+  try {
+    const res = await axios.put(`${BACKED_BASE_URI.value}/${route.query.id}`, userData)
+    if (res.status === 200) {
+      router.back()
+    }
+  } catch (error) {
+    console.log('err :', error)
+  }
+}
 
 watchEffect(() => {
   handleGetUser()
