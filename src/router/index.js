@@ -4,17 +4,17 @@ const routes = [
   {
     path: "/",
     name: "UsersRoute",
-    component: import("../views/UsersRoute.vue"),
+    component: import("../views/UsersListView.vue"),
   },
   {
     path: "/users/add",
     name: "AddUser",
-    component: import("../views/AddUser.vue"),
+    component: import("../views/AddUserView.vue"),
   },
   {
     path: "/users/:userId/details",
     name: "UserDetails",
-    component: import("../views/UserDetails.vue"),
+    component: import("../views/UserDetailsView.vue"),
   },
 ];
 
