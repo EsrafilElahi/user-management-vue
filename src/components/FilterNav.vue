@@ -7,7 +7,7 @@
 
 <script>
 export default {
-
+  name: "FilterNav"
 }
 </script>
 
