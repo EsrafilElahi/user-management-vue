@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-4">
     <div v-for="user in users" :key="user.id">
-      <UserItem :item="user" />
+      <UserItem :item="user" @delete="handleDelete" @refetch="handleGetUers" />
     </div>
 
   </div>
@@ -24,6 +24,10 @@ const handleGetUers = async () => {
   } catch (error) {
     console.log('err :', error)
   }
+}
+
+const handleDelete = async (id) => {
+  return await axios.delete(`${BACKED_BASE_URI.value}/${id}`)
 }
 
 onMounted(() => {

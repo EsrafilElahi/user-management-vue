@@ -12,15 +12,24 @@
     <h3>
       <span class="font-bold">city : </span>{{ item.city }}
     </h3>
+
+    <button class="btn mt-5" @click="handleClickDelete">delete</button>
   </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 
 const props = defineProps({
   item: Object
 })
+
+const handleClickDelete = () => {
+  emit('delete', item.id)
+  emit('refetch')
+}
+
+const emit = defineEmits(['delete', 'refetch'])
 // eslint-disable-next-line vue/no-setup-props-destructure
 const { item } = props;
 </script>
