@@ -36,7 +36,12 @@
 </template>
 
 <script setup>
+import axios from 'axios'
 import { reactive, ref } from 'vue'
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
+const BACKED_BASE_URI = ref('http://localhost:5000/users')
 
 const userData = reactive({
   userName: '',
@@ -46,6 +51,17 @@ const userData = reactive({
 })
 
 console.log('userData :', userData)
+
+const handleSubmit = async () => {
+  try {
+    const res = await axios.post(BACKED_BASE_URI.value, userData)
+    if (res.status === 201) {
+      router.back()
+    }
+  } catch (error) {
+    console.log('err :', error)
+  }
+}
 
 
 const jobOptions = ref([
