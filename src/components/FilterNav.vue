@@ -7,13 +7,9 @@
 
 <script setup>
 import { watch } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
+import { useRoute } from 'vue-router';
 
-const router = useRouter()
 const route = useRoute()
-
-console.log(router)
-console.log(route.name)
 
 watch(route, (to, from) => {
   console.log('Route changed:', to.path, '--->', from.path);
