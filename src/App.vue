@@ -1,11 +1,13 @@
 <template>
   <FilterNav />
+  <UserItem item="{name: 'sdasda'}" />
 
   <RouterView />
 </template>
 
 <script setup>
 import FilterNav from './components/FilterNav.vue';
+import UserItem from './components/UserItem.vue';
 
 
 </script>
