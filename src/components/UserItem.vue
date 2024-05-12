@@ -15,14 +15,15 @@
 
     <div class="flex-between">
       <button class="btn mt-5" @click="handleClickDelete">delete</button>
-      <button class="btn mt-5" @click="handleClickDelete">edit</button>
+      <button class="btn mt-5" @click="handleEdit">edit</button>
     </div>
   </div>
 </template>
 
 <script setup>
 import { defineProps, defineEmits } from 'vue';
-
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const props = defineProps({
   item: Object
 })
@@ -31,6 +32,10 @@ const { item } = props;
 
 const handleClickDelete = () => {
   emit('delete', item.id)
+}
+
+const handleEdit = () => {
+  router.push({ path: '/users/edit', query: { id: item.id } })
 }
 
 const emit = defineEmits(['delete'])
