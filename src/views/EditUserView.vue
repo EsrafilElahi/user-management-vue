@@ -27,7 +27,7 @@
         <input type="text" id="city" name="city" v-model="userData.city" required
           class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500" />
       </div>
-      <button type="submit" class="btn-primary">Submit</button>
+      <button type="submit" class="btn w-[10rem]">Submit</button>
     </form>
   </div>
 </template>
